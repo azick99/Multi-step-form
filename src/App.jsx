@@ -3,7 +3,7 @@ import StepIndicator from './components/step-indicator/StepIndicator'
 import StepsContainer from './components/steps-container/StepsContainer'
 import { StepsContext } from './context/stepsContext.jsx'
 import { FormContext } from './context/formContext'
-import Buttons from './components/buttons-con/buttons'
+import Buttons from './components/buttons-con/Buttons'
 import './App.scss'
 import marked from './assets/images/icon-thank-you.svg'
 function App() {
