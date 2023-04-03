@@ -1,0 +1,167 @@
+.App {
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+.step-inicators-container {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 150px;
+    background-image: url('./assets//images/bg-sidebar-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.form-container {
+    width: 90vw;
+    background: var(--clr-white);
+    margin: 1rem;
+    top: 4rem;
+    border-radius: 1rem;
+    padding: 1.3rem;
+    margin-top: -3.7rem;
+    margin-bottom: 2rem;
+}
+
+.buttons-container {
+    width: 100%;
+    bottom: 0;
+    background: var(--clr-white);
+    justify-content: space-between;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+.flex-end {
+    justify-content: flex-end !important;
+}
+
+//Second Step
+
+.plan-card-container {
+    margin-top: 2rem;
+    flex-direction: column;
+    --gap: .8rem;
+    cursor: pointer;
+}
+
+//Third Step
+
+.checkbox-container {
+    flex-direction: column;
+    margin-top: 1.2rem;
+}
+
+// Fourth Step 
+.results-container {
+    background-color: hsla(216, 100%, 97%, 0.774);
+    padding: 1rem;
+    border-radius: 5px;
+
+
+    .second-result-con {
+        --gap: .5rem;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+}
+
+.total-result {
+    padding: 2rem 1rem 1rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .total-price {
+        color: var(--clr-purplish-blue);
+    }
+}
+
+//Thank You 
+.thank-you-container {
+    display: grid;
+    place-content: center;
+    margin: -3.5rem 2rem 0;
+    background-color: var(--clr-white);
+    padding: 5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    .text-accent {
+        text-align: center;
+    }
+}
+
+.thank-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 50px;
+    }
+}
+
+@media (min-width:45em) {
+    .App {
+        font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        font-family: 'Ubuntu', sans-serif;
+        background: var(--clr-white);
+        padding: 1rem;
+        column-gap: 5rem;
+        border-radius: 15px;
+    }
+
+    .step-inicators-container {
+        --gap: 1rem;
+        padding: 2.5rem 2rem;
+        border-radius: 7px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 300px;
+        height: 560px;
+        background-size: contain;
+        background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    }
+
+    form {
+        padding: 2rem 6rem 0 0;
+
+    }
+
+    .form-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5rem;
+    }
+
+    .buttons-container {
+        width: 100%;
+    }
+
+    //Second Step
+    .plan-card-container {
+        flex-direction: row;
+    }
+
+    //Third Step
+    .checkbox-container {
+        margin-top: 0;
+    }
+
+    .results-container {
+        width: 450px;
+    }
+
+    //Thank You 
+    .thank-you-container {
+        width: 450px;
+        padding-right: 1rem;
+        margin: 0 3rem 0 0;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,33 @@
+.btn {
+    all: unset;
+}
+
+.activePlan {
+    border: 1.3px solid var(--clr-purplish-blue) !important;
+}
+
+.plan-card {
+   transition: .1s ease-out;
+    padding: 1rem;
+    border: 1px solid hsla(231, 11%, 63%, 0.464);
+    border-radius: 10px;
+    &:hover{
+        border: 1px solid var(--clr-purplish-blue);
+    }
+}
+
+@media (min-width:45em) {
+
+    .plan-card {
+        flex-direction: column;
+        width: 110px;
+        height: auto;
+        img{
+        width: 40px;
+        }
+    }
+    .plan-card-text{
+        margin-top: 2rem;
+    }
+    
+}

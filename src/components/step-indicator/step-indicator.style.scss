@@ -1,0 +1,39 @@
+.step-indicator button {
+    display: flex;
+    transition: .2s ease-in-out;
+    background: inherit;
+    cursor: pointer;
+    border: 1px solid var(--clr-white);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    place-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    color: var(--clr-white);
+    font-weight: 500;
+}
+.active-step{
+    background: var(--clr-pastel-blue) !important;
+    color: var(--clr-marine-blue) !important;
+}
+.step-title {
+    display: none;
+}
+
+@media (min-width:45em) {
+    .step-title {
+        display: block;
+        line-height: 20px;
+    }
+    .step-indicator button {
+        margin-bottom: 0;
+        flex-direction: column;
+       
+    }
+    .step-indicator{
+        display: flex;
+        align-items: center;
+        column-gap: .8rem;
+    }
+}
