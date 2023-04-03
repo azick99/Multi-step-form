@@ -14,7 +14,7 @@ const Step1 = () => {
       <div className='input-container flow'>
         <InputForm
           label="Name"
-          placeholder=" Name e.g. Stephen King"
+          placeholder="e.g. Stephen King"
           type="text"
           name="name"
           value={form.name}
