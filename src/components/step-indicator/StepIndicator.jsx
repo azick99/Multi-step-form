@@ -3,11 +3,11 @@ import { StepsContext } from '../../context/stepsContext.jsx'
 import './step-indicator.style.scss'
 
 const StepIndicator = ({ title, stepNum }) => {
-  const { setStep, step } = useContext(StepsContext)
+  const { handleChangeStep, step } = useContext(StepsContext)
   return (
     <div className="step-indicator">
       <button
-        onClick={() => setStep(stepNum)}
+        onClick={handleChangeStep}
         className={step === stepNum ? 'active-step ' : ''}
       >
         {stepNum}

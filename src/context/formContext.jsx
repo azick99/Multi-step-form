@@ -1,4 +1,6 @@
-import { createContext, useState } from 'react'
+import { createContext, useReducer, useState } from 'react'
+import { FORM_ACTION_TYPES } from '../reducers/action.types'
+import { formReducer } from '../reducers/Reducers'
 
 const inputForm = {
   name: '',
@@ -10,7 +12,6 @@ export const FormContext = createContext({
   form: {},
   status: 'typing',
   error: null,
-  setStatus: () => {},
   handleChange: () => {},
   handleSubmit: () => {},
 })
@@ -18,7 +19,8 @@ export const FormContext = createContext({
 export const FormProvider = ({ children }) => {
   const [form, setForm] = useState(inputForm)
   const [error, setError] = useState(null)
-  const [status, setStatus] = useState('typing') // 'typing', 'submitting', or 'success'
+  const [status, dispatch] = useReducer(formReducer, 'typing')
+
   //Form handling
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -27,16 +29,18 @@ export const FormProvider = ({ children }) => {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    setStatus('submitting')
+    dispatch({
+      type: FORM_ACTION_TYPES.SUBMITTED,
+    })
     try {
       await submitForm(form)
-      setStatus('success')
+      dispatch({ type: FORM_ACTION_TYPES.SUCCESSED })
     } catch (err) {
-      setStatus('typing')
+      dispatch({ type: FORM_ACTION_TYPES.TYPED })
       setError(err)
       setTimeout(() => {
         setError(null)
-      }, 2500);
+      }, 2500)
     }
   }
   const submitForm = (form) => {
@@ -62,7 +66,6 @@ export const FormProvider = ({ children }) => {
     form,
     status,
     error,
-    setStatus,
     handleChange,
     handleSubmit,
   }
